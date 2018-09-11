@@ -1,3 +1,54 @@
 .header{
+    position: fixed; /* header悬浮 */
+    width: 100%;
+    padding: 50px 0;
+    z-index: 100; /* 确保其在最上层 */
+
+}
+
+.headerGroup{
+    max-width: 800px;
+    margin: 0 auto; /* 居中 */
+    display: grid;
+    grid-template-columns: repeat(5,auto); /* 水平排列排成5列 */
+    align-items: center;   /* 与框垂直方向居中 */
+    justify-items: center; /* 与框水平方向居中 */
+}
+
+/* 设置链接样式 courses、downloads和workshops */
+.header a{
+    color: white;
+    font-weight: 700;
+}
+
+
+/* 设置购买button 的样式 */
+.header button{
+    padding: 8px 20px;
+    font-size: 20px;
+    background: #56ccf2;
+    border: none; /* remove default border */
+    font-weight: 700;
+    border-radius: 10px;
+    outline: none; /* remove ugly default ouline after click */
+    cursor: pointer; /* 悬浮时显示手指 */
+}
+
+/* 当宽度小于等于640px时，作出以下调整 */
+@media(max-width:640px){
+    /* 使header向上移动 */
+    .header {
+        padding: 15px 0;
+    }
     
+    /* header里只保留四个项目 */
+    .headerGroup{
+        grid-template-columns: repeat(4,auto);
+    }
+
+    /* 选择header里面的第四个项目，即workshops，使其隐藏 */
+    .header a:nth-child(4){
+        display: none;
+    }
+
 }
