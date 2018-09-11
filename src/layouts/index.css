@@ -21,7 +21,7 @@ height: 920px;
 background-size: cover;
 }
 
-
+/* 设定hero里面内容的样式 */
 .heroGroup{
   margin: 0 auto;   /* auto为左右距离自动，此例为居中 */
   max-width: 500px;

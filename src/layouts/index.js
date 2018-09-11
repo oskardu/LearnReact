@@ -14,6 +14,7 @@ const Layout = ({ children, data }) => (
         { name: 'keywords', content: 'sample, something' },
       ]}
     />
+      <Header/>  /* 引入header.js中的Header */
       {children()}
   </div>
 )
