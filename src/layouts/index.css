@@ -14,7 +14,7 @@ a{
 }
 
 
-/* 设置hero样式 */
+/* 设置hero样式,hero包含heroGroup以及其子内容 */
 .hero{
 background: url(../images/wallpaper3.jpg); /* .. 为index.css向上两层文件夹 */
 height: 920px;
@@ -35,6 +35,12 @@ background-size: cover;
   color: white;
   font-size: 60px;
   line-height: 1.2;
+  opacity: 0; /* 设置渐入初始透明度 */
+  animation: heroAnimation;
+  animation-duration: 3s;
+  animation-delay: 0.1s;
+  animation-fill-mode: forwards; /* 使其动画结束后停留在结束状态 */
+  animation-timing-function: cubic-bezier(0.2,0.8,0.2,1); /* 设置动画参数 */
 }
 
 /* 设定hero中段落的样式 */
@@ -42,6 +48,8 @@ background-size: cover;
   color: rgba(255, 255, 255, 0.8);
   font-size:30px;
   line-height: 1.5;
+  opacity: 0;
+  animation: heroAnimation 3s 0.2s forwards cubic-bezier(0.2,0.8,0.2,1); /* 设置hero中的p的渐入动画 动画名 动画时间 延迟时间 停留在结束状态 动画参数 */
 }
 
 /* 设定hero中的链接样式 */
@@ -55,6 +63,9 @@ background-size: cover;
   border-radius: 40px;
 }
 
+
+
+/* 当宽度小于等于640px时，hero中h1和p的变化 */
 @media (max-width:640px){
   /* 距顶部100px 距左右20px */
   .heroGroup{
@@ -69,3 +80,27 @@ background-size: cover;
     font-size: 24px
   }
 }
+
+/* hero中h1和p的渐入动画 */
+@keyframes heroAnimation{
+  0%{
+    opacity: 0;
+    transform: translateY(20px); /* 使h1从下往上移动 */
+
+  }
+  100%{
+    opacity: 1;
+    transform: translateY(0px); /* 使h1从下往上移动 */
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
