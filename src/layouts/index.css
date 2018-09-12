@@ -61,14 +61,8 @@ background-size: cover;
   background: rgba(0, 0, 0, 0.7);
   padding: 9px 20px;
   border-radius: 40px;
-  transition: 0.8s cubic-bezier(0.2,0.8,0.2,1);
 }
 
-
-.hero a:hover{
-  background: white;
-  color: black;
-}
 
 
 /* 当宽度小于等于640px时，hero中h1和p的变化 */
@@ -91,12 +85,12 @@ background-size: cover;
 @keyframes heroAnimation{
   0%{
     opacity: 0;
-    transform: translateY(20px); /* 开始的状态，透明度为零，使h1从下往上移动 */
+    transform: translateY(20px); /* 使h1从下往上移动 */
 
   }
   100%{
     opacity: 1;
-    transform: translateY(0px); /* 结束的状态，使h1从下往上移动 */
+    transform: translateY(0px); /* 使h1从下往上移动 */
   }
 }
 
