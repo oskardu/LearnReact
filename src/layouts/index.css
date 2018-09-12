@@ -19,6 +19,8 @@ a{
 background: url(../images/wallpaper3.jpg); /* .. 为index.css向上两层文件夹 */
 height: 920px;
 background-size: cover;
+background-position: center;
+position: relative; /* 若hero中的内容设置为position:absolute，则其位置为相对于hero的位置 */
 }
 
 /* 设定hero里面内容的样式 */
@@ -80,6 +82,15 @@ background-size: cover;
     font-size: 24px
   }
 }
+
+/* 设置hero中插入svg的样式,绝对定位（相对于其父级），贴于左下角 */
+  .hero svg{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+  }
+
 
 /* hero中h1和p的渐入动画 */
 @keyframes heroAnimation{
