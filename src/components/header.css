@@ -19,22 +19,22 @@
 .header a{
     color: white;
     font-weight: 700;
-    transition: 1s 
+    transition: 0.3s cubic-bezier(0.2,0.8,0.2,1);
     
 }
 
 
 /* 设置购买button 的样式 */
 .header button{
-    padding: 8px 20px;
+    padding: 8px 24px;
     font-size: 20px;
     background: #56ccf2;
     border: none; /* remove default border */
     font-weight: 700;
-    border-radius: 10px;
+    border-radius: 20px;
     outline: none; /* remove ugly default ouline after click */
     cursor: pointer; /* 悬浮时显示手指 */
-    transition: 1s;
+    transition: 0.3s cubic-bezier(0.2,0.8,0.2,1);
 
 }
 
@@ -46,11 +46,9 @@
 }
 
 
-/* 设置watch the video按钮的悬浮样式 */
+/* 设置header中按钮courses、downloads和workshops的悬浮样式 */
 .header a:hover{
-    background: white;
-    color: black;
-
+    font-size: 24px;
 }
 
 

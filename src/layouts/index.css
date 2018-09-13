@@ -27,9 +27,24 @@ position: relative; /* 若hero中的内容设置为position:absolute，则其位
 .heroGroup{
   margin: 0 auto;   /* auto为左右距离自动，此例为居中 */
   max-width: 500px;
-  padding: 150px 50px;
+  padding: 150px 50px 8px 50px;
   text-align: center;
 }
+
+
+/* 包含sketch、figma等logo的div的样式 */
+.heroLogos{
+  margin: 0 auto;
+  padding: 100px 0 90px 0;
+  max-width:592px;
+  display: grid;
+  grid-template-columns: repeat(8,auto);
+  align-items: center;
+  justify-items: center;
+}
+
+
+
 
 /* 设定hero中h1标题的样式 */
 .hero h1{
@@ -63,6 +78,15 @@ position: relative; /* 若hero中的内容设置为position:absolute，则其位
   background: rgba(0, 0, 0, 0.7);
   padding: 9px 20px;
   border-radius: 40px;
+  transition: 0.3s cubic-bezier(0.2,0.8,0.2,1);
+}
+
+
+/* watch the video 按钮的鼠标悬浮状态 */
+.hero a:hover{
+  background: white;
+  color: black;
+  transform: translateY(-3px);
 }
 
 
@@ -105,13 +129,50 @@ position: relative; /* 若hero中的内容设置为position:absolute，则其位
   }
 }
 
+/* 包含卡片的div的样式 */
+.cardGroup{
+  margin: 50px 40px 100px;
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  grid-gap: 40px;  /* 两行grid之间的距离 */
+  justify-items: center; /* 水平居中显示 */
+
+}
 
 
+.cards{
+  margin: 100px 0 0 0;
+}
 
 
+.cards h2{
+  margin: 50px 20px;
+  font-size: 60px;
+  text-align: center;
+  font-weight: 700;
+  background: linear-gradient(104deg,#050A27 0%,#4A548C 100%);  /* 设置文字背景渐变填充 */
+  -webkit-background-clip: text;   /* 将文字作为mask，只显示文字部分的渐变背景填充 */
+  -webkit-text-fill-color: transparent;  /* 文本透明度为零，显示渐变背景填充 */
+}
+
+/* 宽度小于等于1060px时，显示三列卡片 */
+@media(max-width:1060px){
+  .cardGroup{
+    grid-template-columns: repeat(3,1fr);
+  }
+}
+
+/* 宽度小于等于1060px时，显示两列卡片 */
+@media(max-width:720px){
+  .cardGroup{
+    grid-template-columns: repeat(2,1fr);
+  }
+}
 
 
-
-
-
-
+/* 宽度小于等于400px时，显示一列卡片 */
+@media(max-width:400px){
+  .cardGroup{
+    grid-template-columns: repeat(1,1fr);
+  }
+}

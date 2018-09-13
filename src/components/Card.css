@@ -1,0 +1,49 @@
+.Card{
+    width: 300px;
+    height: 225px;
+    position: relative;
+    overflow: hidden;  /* 将卡片用作mask，只显示卡片内的内容 */
+    border-radius: 20px;
+    box-shadow: 1 20px 40px rgba(0, 0, 0, 0.25);
+    display: grid;
+    grid-template-rows: 1fr 1fr;  /* 使Card分为上下两部分 */
+    transition: 1s 
+
+}
+
+
+.Card:hover{
+    transform: scale(1.1,1.1);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+}
+
+/* 设定Card鼠标悬浮时图片的运动 */
+.Card:hover img{
+    transform: translateY(-20px);
+}
+
+
+.Card img{
+    position: absolute; /* 因为Card的position设置为relative，其中的img设置为absolute时，img的位置和大小即为相对与Card的 */
+    top: 0;
+    height: 110%; /* 留出10%的富余高度，用作创造视差滚动效果 */
+    z-index: -1;  /* 使其上的文字可见 */
+    transition: 0.8s cubic-bezier(0.2,0.8,0.2,1);
+}
+
+.Card h3{
+    color: white;
+    font-size: 30px;
+    margin: 20px 0 0 20px;
+    width: 190px;
+}
+
+
+.Card p{
+    color: rgba(255, 255, 255, 0.8);
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size:18px;
+    align-self: end; /* 与下半部分对齐 */
+    margin: 0 0 20px 20px;  /* 距左侧和底部的距离分别为20px */
+}
